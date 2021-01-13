@@ -1,0 +1,12 @@
+/* .Card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    max-width: 1800px;
+    max-height: fit-content;
+} */
+
+.Title {
+    font-size: 32px;
+    color: rgb(24, 24, 24);
+}
