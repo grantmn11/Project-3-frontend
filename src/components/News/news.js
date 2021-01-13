@@ -5,7 +5,7 @@ import  Button  from 'react-bootstrap/Button'
 export function News(props){
     return (
         <Card className={styles.Card} style={{ width: '18rem'}}>
-        <Card.Img variant="top" src={`${props.image}`}/>
+        <Card.Img variant="top" src={`${props.image.url}`}/>
             <Card.Body>
                 <Card.Title className={styles.Title}>{props.story.title}</Card.Title>
                 <Card.Text>
