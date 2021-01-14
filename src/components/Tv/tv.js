@@ -12,7 +12,7 @@ export function TV(props){
                 Title: {props.television.original_name}
                 </Card.Text>
                 <Card.Text>
-                Movie Rating: {props.television.vote_average}
+                 Rating: {props.television.vote_average}
                 </Card.Text>
                 
             </Card.Body>

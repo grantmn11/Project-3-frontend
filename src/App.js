@@ -13,9 +13,8 @@ import { getPopularStory, getTopStory, getMovieData, getTvData, getBookData } fr
 function App() {
 
 const [getNewsData, setNewsData] = useState({
-  results: [{
-    multimedia: []
-  }]
+  results: []
+  
 })
 
 const [getTopNewsStory, setTopStory] = useState({
@@ -59,13 +58,15 @@ useEffect(() => {
     <div className="App">
       <Header />
       <main>
-        { 
+      <div className='Container'>
+        { getNewsData.results &&
           getNewsData.results.map((story, idx) => 
-          <News key={idx} story={story} image={story.multimedia.url} />
+          <News key={idx} story={story} />
         )}
-
+        </div>
+          
         {getTopNewsStory.results.map((news, idx) => 
-            <Story key={idx} news={news} />
+            <Story  key={idx} news={news} />
             )}
 
         {getNewMovieData.results.map((movie, idx) =>

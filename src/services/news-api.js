@@ -12,7 +12,7 @@ const NYAPI_KEY = `${process.env.REACT_APP_API_KEY}`
 
 const MOVIE_KEY = `${process.env.REACT_APP_API_KEY2}`
 
-console.log('API', MOVIE_KEY)
+
 
 export function getTopStory(){
     return fetch(BASE_URL + NYAPI_KEY).then(res => res.json())

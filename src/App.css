@@ -13,4 +13,11 @@
   color: white;
 }
 
-
+.Container{
+  display: flex;
+  flex-direction: row wrap;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: fit-content;
+  
+}
