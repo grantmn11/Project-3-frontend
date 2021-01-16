@@ -2,21 +2,23 @@ import Popover from 'react-bootstrap/Popover'
 import Button from 'react-bootstrap/Button'
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import styles from './footer.module.css'
+import { Link } from 'react-router-dom'
 
 export function Footer(props){
     const popover = (
         <Popover id="popover-basic">
-          <Popover.Title as="h3">Popover right</Popover.Title>
+          <Popover.Title as="h3">LinkedIn</Popover.Title>
           <Popover.Content>
-            And here's some <strong>amazing</strong> content. It's very engaging.
-            right?
+            <a href='https://www.linkedin.com/in/grant-ferreira1/'>LinkedIn</a>
+            <Popover.Title as="h3">GitHub</Popover.Title>
+            <a href='https://github.com/grantmn11'>GitHub</a>
           </Popover.Content>
         </Popover>
       );
       
       const Example = () => (
         <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-          <Button variant="success">Click me to see</Button>
+          <Button variant="dark">Copyright &copy; Grant Ferreira</Button>
         </OverlayTrigger>
       );
       
@@ -25,25 +27,8 @@ export function Footer(props){
         
         <footer className={styles.Footer}>
         <Example />
-            Copyright &copy; Grant Ferreira
+            
         </footer>
     )
 }
 
-// const popover = (
-//     <Popover id="popover-basic">
-//       <Popover.Title as="h3">Popover right</Popover.Title>
-//       <Popover.Content>
-//         And here's some <strong>amazing</strong> content. It's very engaging.
-//         right?
-//       </Popover.Content>
-//     </Popover>
-//   );
-  
-//   const Example = () => (
-//     <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-//       <Button variant="success">Click me to see</Button>
-//     </OverlayTrigger>
-//   );
-  
-//   render(<Example />);

@@ -7,8 +7,7 @@ export function News(props){
     
     return (
         <div className={styles.Container} >
-        <CardDeck  >
-        <Card  >
+        <Card style={{ width: '18rem'}} >
         <Card.Img  variant="top" src={`${props.story.multimedia[0].url}`}/>
             <Card.Body>
                 <Card.Title >{props.story.title}</Card.Title>
@@ -18,7 +17,8 @@ export function News(props){
                 <Button variant="dark" href={props.story.url}>News Article</Button>
             </Card.Body>
         </Card>
-        </CardDeck>
+    
+        
         </div>
     )
 }
