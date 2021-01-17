@@ -7,7 +7,9 @@ function signup(user){
     return fetch(BASE_URL + '/signup', {
         method: 'POST',
         headers: {
-            'Content-Type': 'Application/json'
+            'Content-Type': 'Application/json',
+            // 'Authorization': 'Bearer ' + getToken()
+            
         },
         body: JSON.stringify(user)
     }).then(response => {
@@ -21,6 +23,7 @@ function login(credentials){
         method: 'POST',
         headers: {
             'Content-Type': 'Application/json'
+            
         },
         body: JSON.stringify(credentials)
     }).then(response => {

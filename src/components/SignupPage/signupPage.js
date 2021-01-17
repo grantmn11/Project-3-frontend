@@ -27,7 +27,7 @@ export function SignupPage(props){
 
             setFormState(getInitialFormState())
 
-        // props.handleSignupOrLogin()
+        props.handleSignupOrLogin()
 
         props.history.push('/dashboard')
 
