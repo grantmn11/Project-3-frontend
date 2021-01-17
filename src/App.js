@@ -8,6 +8,9 @@ import {Movie} from './components/Movie/movie'
 import {TV} from './components/Tv/tv'
 import {Book} from './components/Book/book'
 import {News} from './components/News/news'
+import {MoviePage} from './components/MoviePage/moviePage'
+import {BookPage} from './components/BookPage/bookPage'
+import {TVPage} from './components/TVPage/tvPage'
 
 import {HomePage} from './components/HomePage/homePage'
 import {DashboardPage} from './components/DashboardPage/dashboardPage'
@@ -20,6 +23,7 @@ import {useState, useEffect} from 'react';
 import './App.css';
 import { getPopularStory, getTopStory, getMovieData, getTvData, getBookData } from './services/news-api';
 import { Switch, Route, withRouter, Redirect } from 'react-router-dom'
+import { TvPage } from './components/TVPage/tvPage';
 
 function App(props) {
 const [userState, setUserState] = useState({
@@ -90,14 +94,7 @@ useEffect(() => {
   newsData()
 }, []);
 
-function grabTopFive(arr) {
-  console.log(arr)
-  let newArr = [];
-  for(let i = 0; i < 5; i++){
-    newArr.push(arr[i])
-  } console.log(newArr)
-  return newArr;
-}
+
 
 
   return (
@@ -109,13 +106,13 @@ function grabTopFive(arr) {
       <main>
       <Switch>
         <Route exact path='/' render={props =>
-         <HomePage />
+         <HomePage {...props} story={getTopNewsStory} />
         } />
       
      
-        <Route exact path='/dashboard' render={props =>
+        <Route exact path='/news' render={props =>
         userState.user ? 
-         <DashboardPage />
+         <DashboardPage {...props} news={getNewsData}/>
          :
          <Redirect to='/login' />
         } />
@@ -129,41 +126,33 @@ function grabTopFive(arr) {
         <Route exact path='/login' render={props =>
          <LoginPage {...props} handleSignupOrLogin={handleSignupOrLogin}/>
         } />
+
+        <Route exact path='/movies' render={props =>
+          <MoviePage {...props} movies={getNewMovieData} />
+        }
+          />
+
+          <Route exact path='/books' render={props =>
+          <BookPage {...props} books={getNewBookData} />
+          
+          } />
+
+          <Route exact path='/shows' render={props =>
+          <TvPage {...props} shows={getNewTvData} />
+
+          } />
+
+          
+        
       </Switch>
       
       
-      <div className='Container'>
-        { getTopNewsStory.results.length > 0 &&
-          grabTopFive(getTopNewsStory.results).map((news, idx) => 
-            <Story  key={idx} news={news} index={idx}/>
-            )}
-            </div>
+      
 
-            <div className='Container'>
-        { getNewsData.results &&
-          getNewsData.results.map((story, idx) => 
-          <News key={idx} story={story} numbers={idx} />
             
-          
-          
-        )}
-        </div>
         
-            <div className='Container'>
-        {getNewMovieData.results.map((movie, idx) =>
-            <Movie key={idx} movie={movie} image={movie.poster_path}/>
-        )}
-          </div>
-          <div className='Container'>
-        {getNewTvData.results.map((television, idx) =>
-            <TV key={idx} television={television} image={television.poster_path}/>
-        )}
-        </div>
-        <div className='Container'>
-        {getNewBookData.results.books.map((books, idx) => 
-        <Book key={idx} newBooks={books} image={books.book_image} />
-        )}
-        </div>
+            
+         
         </main>
          
             

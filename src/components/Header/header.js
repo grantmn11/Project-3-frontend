@@ -8,15 +8,32 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 import styles from './header.module.css'
 
 export function Header(props){
+    let drop = props.user ?
+    <Navbar bg="dark" variant="dark">
+    <NavDropdown title="All" id="collasible-nav-dropdown">
+        <NavDropdown.Item href="/news">News</NavDropdown.Item>
+        <NavDropdown.Item href="/movies">Movies</NavDropdown.Item>
+        <NavDropdown.Item href="/books">Books</NavDropdown.Item>
+        <NavDropdown.Item href="/shows">Shows</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item href="/">Home</NavDropdown.Item>
+      </NavDropdown> 
+      </Navbar>
+      :
+      <Form inline>
+  <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+  <Button variant="outline-info">Search</Button>
+</Form>
+      
     return(
 
         <Navbar bg="dark" variant="dark">
-<Navbar.Brand href="/"><strong>One Stop</strong></Navbar.Brand>
+<Navbar.Brand href="/" style={{fontSize: 24}}><strong>One Stop</strong></Navbar.Brand>
 <Nav className="mr-auto">
   { props.user ?
   <>
-  <Nav.Link href="/dashboard">Dashboard</Nav.Link>
-  <Nav.Link href="" onClick={props.handleLogout}>Logout</Nav.Link>
+  <Nav.Link href="/dashboard">Welcome, <strong>{props.user.firstName}</strong></Nav.Link>
+  <Nav.Link href="" onClick={props.handleLogout} style={{fontSize: 13}}>Logout</Nav.Link>
   </>
   :
   <>
@@ -26,19 +43,10 @@ export function Header(props){
   </>
 
   }
-  <NavDropdown title="All" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="/news">News</NavDropdown.Item>
-        <NavDropdown.Item href="/movies">Movies</NavDropdown.Item>
-        <NavDropdown.Item href="/books">Books</NavDropdown.Item>
-        <NavDropdown.Item href="/shows">Shows</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="/">Home</NavDropdown.Item>
-      </NavDropdown>
+  
 </Nav>
-<Form inline>
-  <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-  <Button variant="outline-info">Search</Button>
-</Form>
+{drop}
+
 </Navbar>
       
     )
