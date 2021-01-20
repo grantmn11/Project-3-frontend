@@ -12,6 +12,7 @@ import {MoviePage} from './components/MoviePage/moviePage'
 import {BookPage} from './components/BookPage/bookPage'
 import {TVPage} from './components/TVPage/tvPage'
 
+
 import {HomePage} from './components/HomePage/homePage'
 import {DashboardPage} from './components/DashboardPage/dashboardPage'
 import {SignupPage} from './components/SignupPage/signupPage'
@@ -104,9 +105,10 @@ useEffect(() => {
       <Header handleLogout={handleLogout} user={userState.user} />
      
       <main>
+      
       <Switch>
         <Route exact path='/' render={props =>
-         <HomePage {...props} story={getTopNewsStory} />
+         <HomePage {...props} user={userState.user} story={getTopNewsStory} />
         } />
       
      
@@ -119,12 +121,13 @@ useEffect(() => {
       
       
         <Route exact path='/signup' render={props =>
-         <SignupPage {...props} handleSignupOrLogin={handleSignupOrLogin} />
+         <SignupPage {...props} books={getNewBookData} user={userState.user}  handleSignupOrLogin={handleSignupOrLogin}/>
+         
         } />
       
       
         <Route exact path='/login' render={props =>
-         <LoginPage {...props} handleSignupOrLogin={handleSignupOrLogin}/>
+         <LoginPage {...props}  news={getNewsData} handleSignupOrLogin={handleSignupOrLogin}/>
         } />
 
         <Route exact path='/movies' render={props =>
@@ -145,7 +148,33 @@ useEffect(() => {
           
         
       </Switch>
+      {/* <div className='Container'>
+        { getTopNewsStory.results &&
+          getTopNewsStory.results.map((news, idx) => 
+            <Story  key={idx} news={news} index={idx}/>
+            )}
+            </div> */}
       
+           
+        {/* <div className='Container'>
+{ getNewsData.results &&
+  getNewsData.results.map((story, idx) => 
+  <News key={idx} story={story} numbers={idx} />
+    
+  
+  
+)}
+</div> */}
+        
+
+{/* <div>
+            <div className='Container'>
+        { getTopNewsStory.results.length > 0 &&
+          grabTopFive(getTopNewsStory.results).map((news, idx) => 
+            <Landing  key={idx} newsStory={news} index={idx}/>
+            )}
+            </div>
+        </div> */}
       
       
 

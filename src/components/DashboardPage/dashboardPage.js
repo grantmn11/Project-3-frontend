@@ -2,14 +2,15 @@
 import { News } from "../../components/News/news";
 
 export function DashboardPage(props){
+
     return(
         <div>
             
 
             <div className='Container'>
         { 
-          props.news.results.map((story, idx) => 
-          <News key={idx} story={story} numbers={idx} />
+           props.news.results.map((story, idx) => 
+           <News key={idx} story={story} numbers={idx} />
             
           
           
@@ -17,9 +18,9 @@ export function DashboardPage(props){
         </div>
 
             
-        </div>
+         </div>
     )
-}
+ }
 
 {/* <div className='Container'>
 { getNewsData.results &&

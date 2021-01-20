@@ -10,7 +10,7 @@ import styles from './header.module.css'
 export function Header(props){
     let drop = props.user ?
     <Navbar bg="dark" variant="dark">
-    <NavDropdown title="All" id="collasible-nav-dropdown">
+    <NavDropdown title="View All" id="collasible-nav-dropdown">
         <NavDropdown.Item href="/news">News</NavDropdown.Item>
         <NavDropdown.Item href="/movies">Movies</NavDropdown.Item>
         <NavDropdown.Item href="/books">Books</NavDropdown.Item>
@@ -22,7 +22,7 @@ export function Header(props){
       :
       <Form inline>
   <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-  <Button variant="outline-info">Search</Button>
+  <Button variant="outline-light">Search</Button>
 </Form>
       
     return(

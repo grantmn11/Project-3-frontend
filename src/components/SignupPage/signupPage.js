@@ -1,5 +1,7 @@
 import {useState} from 'react'
 import {signup} from '../../services/userService'
+import { NewSign } from '../NewSign/newSign';
+import styles from "./signupPage.module.css";
 
 export function SignupPage(props){
     const [formState, setFormState] = useState(getInitialFormState())
@@ -29,41 +31,80 @@ export function SignupPage(props){
 
         props.handleSignupOrLogin()
 
-        props.history.push('/dashboard')
+        props.history.push('/')
 
     } catch(error){
         alert(error.message);
 
     }
 }
+function grabTopFive(arr){
+    let newArr = [];
+    for(let i = 0; i < 1; i++){
+     newArr.push(arr[i])
+
+} 
+   return newArr;
+ }
+ let newUser = props.user ?
+   <div className='Container'>
+       { 
+          props.books.results.books.map((books, idx) => 
+             <NewSign  key={idx} newBooks={books} image={books.book_image}/>
+             )}
+             </div>
+            //  { 
+            //     props.news.results.map((story, idx) => 
+            //     <News key={idx} story={story} numbers={idx} />
+                 
+               
+               
+            //  )}
+        
+         :
+            <div className='Container'>
+        { props.books.results.books.length > 0 &&
+          grabTopFive(props.books.results.books).map((books, idx) => 
+            <NewSign  key={idx} newBooks={books} image={books.book_image}/>
+            )}
+            </div>
 
 
 
     return(
-        <div className='Page'>
-            <form onSubmit={handleSubmit}>
+        <div>
+        {newUser}
+        <div className={styles.Container}>
+            <form className={styles.field} onSubmit={handleSubmit}>
                 <input 
                 value={formState.firstName}
                  onChange={handleChange} 
                  name='firstName' 
-                 type='text' />
+                 type='text' 
+                placeholder='First Name'
+                 />
                 <input 
                 value={formState.lastName} 
                 onChange={handleChange} 
                 name='lastName' 
-                type='text' />
+                type='text' 
+                placeholder='Last Name'
+                />
                 <input 
                 value={formState.email} 
                 onChange={handleChange}
                 name='email' 
-                type='email' />
+                type='email'
+                placeholder='Email' />
                 <input 
                 value={formState.password} 
                 onChange={handleChange}
                 name='password' 
-                type='password' />
+                type='password'
+                placeholder='Password' />
                 <button>Sign Up</button>
             </form>
+        </div>
         </div>
     )
     }

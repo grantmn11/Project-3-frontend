@@ -16,9 +16,9 @@ export function Footer(props){
         </Popover>
       );
       
-      const Example = () => (
+      const TryOverlay = () => (
         <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-          <Button variant="dark">Copyright &copy; Grant Ferreira</Button>
+          <Button  variant="outline-dark"  style={{ marginTop: 5}}>Copyright &copy; Grant Ferreira</Button>
         </OverlayTrigger>
       );
       
@@ -26,7 +26,7 @@ export function Footer(props){
     return(
         
         <footer className={styles.Footer}>
-        <Example />
+        <TryOverlay />
             
         </footer>
     )
