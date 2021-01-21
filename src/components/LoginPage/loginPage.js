@@ -41,7 +41,7 @@ export function LoginPage(props){
 
 function grabTopFive(arr){
     let newArr = [];
-    for(let i = 0; i < 5; i++){
+    for(let i = 0; i < 3; i++){
      newArr.push(arr[i])
 
 } 
