@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button'
 import styles from './story.module.css'
 
 export function Story(props){
+    console.log(props.news)
 
     return(
         
