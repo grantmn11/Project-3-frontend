@@ -5,6 +5,7 @@ import styles from './movie.module.css'
 
 export function Movie(props){
     return(
+        <div>
         <Card className={styles.Card} style={{ width: '18rem'}}>
         <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w300${props.image}`} />
         <Link to={`/details/${props.id}`}>
@@ -21,6 +22,9 @@ export function Movie(props){
                 
             </Card.Body>
         </Card>
+        
+        
+                </div>
     )
 }
 

@@ -5,7 +5,7 @@ export function MoviePage(props){
         <div>
         <div className='Container'>
         {props.movies.results.map((movie, idx) =>
-            <Movie key={idx} index={idx} movie={movie} image={movie.poster_path}/>
+            <Movie key={idx} id={idx} movie={movie} image={movie.poster_path}/>
         )}
           </div>
         </div>

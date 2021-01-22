@@ -12,6 +12,7 @@ import {MoviePage} from './components/MoviePage/moviePage'
 import {BookPage} from './components/BookPage/bookPage'
 import {TVPage} from './components/TVPage/tvPage'
 import {MovieDetails} from './components/MovieDetails'
+import {TelevisionDetails} from './components/televisionDetails'
 
 import {HomePage} from './components/HomePage/homePage'
 import {DashboardPage} from './components/DashboardPage/dashboardPage'
@@ -146,7 +147,13 @@ useEffect(() => {
           } />
 
           <Route exact path='/details/:id' render={props =>
-          <MovieDetails {...props} movies={getNewMovieData[props.match.params.id]}/>
+          <MovieDetails  movie={getNewMovieData.results[props.match.params.id]}
+          />
+          }
+          />
+          <Route exact path='/overview/:id' render={props =>
+          <TelevisionDetails television={getNewTvData.results[props.match.params.id]}
+          />
           }
           />
 

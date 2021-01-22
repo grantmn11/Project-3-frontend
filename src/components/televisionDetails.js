@@ -1,18 +1,16 @@
-
 import Card from 'react-bootstrap/Card'
 
-export function MovieDetails(props){
-    console.log(props.movie)
+export function TelevisionDetails(props){
     return(
         <div className='Container'>
         <Card  style={{ width: '18rem'}} >
-        <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w300${props.movie.poster_path}`} />
+        <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w300${props.television.poster_path}`} />
         
             <Card.Body>
-                <Card.Title >{props.movie.title}</Card.Title>
+                <Card.Title >{props.television.original_name}</Card.Title>
                 
                 <Card.Text >
-                {props.movie.overview}
+                {props.television.overview}
                 </Card.Text>
                 
             </Card.Body>

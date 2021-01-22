@@ -1,6 +1,6 @@
 import Card from 'react-bootstrap/Card'
 import styles from './tv.module.css'
-
+import {Link} from 'react-router-dom'
 
 export function TV(props){
     return(
@@ -14,7 +14,9 @@ export function TV(props){
                 <Card.Text>
                  <strong>Rating: {props.television.vote_average}</strong>
                 </Card.Text>
-                
+                <Link to={`/overview/${props.id}`}>
+                    Show Details
+                </Link>
             </Card.Body>
         </Card>
     )

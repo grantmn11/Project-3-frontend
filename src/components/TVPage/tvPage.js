@@ -5,7 +5,7 @@ export function TvPage(props){
         <div>
          <div className='Container'>
         {props.shows.results.map((television, idx) =>
-            <TV key={idx} television={television} image={television.poster_path}/>
+            <TV key={idx} id={idx} television={television} image={television.poster_path}/>
         )}
         </div>
         </div>
