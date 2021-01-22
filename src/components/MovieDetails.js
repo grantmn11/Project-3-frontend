@@ -1,13 +1,11 @@
-import {Movie} from '../../components/Movie/movie'
+import {Movie} from './Movie/movie'
 
-export function MoviePage(props){
+export function MovieDetails(props){
     return(
-        <div>
         <div className='Container'>
         {props.movies.results.map((movie, idx) =>
             <Movie key={idx} index={idx} movie={movie} image={movie.poster_path}/>
         )}
           </div>
-        </div>
     )
 }

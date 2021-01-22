@@ -12,7 +12,7 @@
  }
 function grabTopTen(arr){
   let newArr2 = [];
- for(let i = 0; i < 8; i++){
+ for(let i = 0; i < 15; i++){
    newArr2.push(arr[i])
  }
     return newArr2;

@@ -1,12 +1,15 @@
 import Card from 'react-bootstrap/Card'
-
+import {Link} from 'react-router-dom'
 import styles from './movie.module.css'
 
 
 export function Movie(props){
     return(
         <Card className={styles.Card} style={{ width: '18rem'}}>
-        <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w300${props.image}`}/>
+        <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w300${props.image}`} />
+        <Link to={`/details/${props.id}`}>
+                    Movie Details
+                </Link>
             <Card.Body>
                 <Card.Title className={styles.Title}>Trending Movies</Card.Title>
                 <Card.Subtitle className='mb-2 text-muted'>
