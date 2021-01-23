@@ -4,6 +4,7 @@ import  Navbar  from "react-bootstrap/Navbar";
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
+import { NavDropdown } from 'react-bootstrap';
 
 
 export function Header(props){
@@ -13,21 +14,19 @@ export function Header(props){
     <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
     <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="mr-auto">
-    <Nav.Link href="/news">News</Nav.Link>
+    {/* <Nav.Link href="/news">News</Nav.Link>
         <Nav.Link href="/movies">Movies</Nav.Link>
         <Nav.Link href="/books">Books</Nav.Link>
-        <Nav.Link href="/shows">Shows</Nav.Link>
-        {/* <NavDropdown title="View All" id="responsive-nav-dropdown">
+        <Nav.Link href="/shows">Shows</Nav.Link> */}
+        <NavDropdown title="View All" id="responsive-nav-dropdown">
          <NavDropdown.Item href="/news">News</NavDropdown.Item>
          <NavDropdown.Item href="/movies">Movies</NavDropdown.Item>
         <NavDropdown.Item href="/books">Books</NavDropdown.Item>
          <NavDropdown.Item href="/shows">Shows</NavDropdown.Item>
          <NavDropdown.Divider />
          <NavDropdown.Item href="/">Home</NavDropdown.Item>
-         </NavDropdown /> */}
-    
-        
-     </Nav>
+         </NavDropdown>
+        </Nav>
      </Navbar.Collapse>
       </Navbar>
 
