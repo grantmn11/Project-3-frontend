@@ -4,7 +4,7 @@ import  Navbar  from "react-bootstrap/Navbar";
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
 import Button from 'react-bootstrap/Button'
-import { NavDropdown, NavLink } from 'react-bootstrap';
+import { NavDropdown, } from 'react-bootstrap';
 
 
 export function Header(props){
@@ -46,14 +46,14 @@ export function Header(props){
 <Nav className="mr-auto">
   { props.user ?
   <>
-  <Nav.Link href="/dashboard">Welcome, <strong>{props.user.firstName}</strong></Nav.Link>
-  <Nav.Link href="" onClick={props.handleLogout} style={{fontSize: 13}}>Logout</Nav.Link>
+  <Nav.Brand href="/dashboard">Welcome, <strong>{props.user.firstName}</strong></Nav.Brand>
+  <Nav.Brand href="" onClick={props.handleLogout} style={{fontSize: 13}}>Logout</Nav.Brand>
   </>
   :
   <>
   
-  <Nav.Link href="/signup">Sign  Up</Nav.Link>
-  <Nav.Link href="/login">Login</Nav.Link>
+  <Nav.Brand href="/signup">Sign  Up</Nav.Brand>
+  <Nav.Brand href="/login">Login</Nav.Brand>
   </>
 
   }
