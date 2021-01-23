@@ -8,9 +8,9 @@ const MOVIE_URL = 'https://api.themoviedb.org/3/movie/popular?api_key='
 
 const BOOK_URL = 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-nonfiction.json?api-key='
 
-const NYAPI_KEY = `${process.env.REACT_APP_API_KEY}`
+const NYAPI_KEY = process.env.REACT_APP_API_KEY
 
-const MOVIE_KEY = `${process.env.REACT_APP_API_KEY2}`
+const MOVIE_KEY = process.env.REACT_APP_API_KEY2
 
 
 
