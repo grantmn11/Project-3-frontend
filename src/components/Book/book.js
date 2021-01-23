@@ -7,7 +7,7 @@ export function Book(props){
         <Card className={styles.Card} style={{ width: '18rem'}}>
         <Card.Img variant="top" src={`${props.image}`}/>
             <Card.Body>
-                <Card.Title className={styles.Title}>{props.newBooks.title}</Card.Title>
+                <Card.Title className={styles.Title}><strong>{props.newBooks.title}</strong></Card.Title>
                 <Card.Text>
                     {props.newBooks.description}
                 </Card.Text>
@@ -16,12 +16,3 @@ export function Book(props){
         </Card>
     )
 }
-
-{/* <div>
-            <h1>Book Recommendations</h1>
-            <h4>{props.newBooks.title}</h4>
-            <h3>Author</h3>
-            <h5>{props.newBooks.author}</h5>
-            <p>{props.newBooks.description}</p>
-
-        </div> */}

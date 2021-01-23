@@ -2,15 +2,8 @@ import {getUser, logout } from './services/userService';
 
 import {Header} from './components/Header/header'
 import {Footer} from './components/Footer/footer'
-import {Story} from './components/Story/story'
-import Button from 'react-bootstrap/Button'
-import {Movie} from './components/Movie/movie'
-import {TV} from './components/Tv/tv'
-import {Book} from './components/Book/book'
-import {News} from './components/News/news'
 import {MoviePage} from './components/MoviePage/moviePage'
 import {BookPage} from './components/BookPage/bookPage'
-import {TVPage} from './components/TVPage/tvPage'
 import {MovieDetails} from './components/MovieDetails'
 import {TelevisionDetails} from './components/televisionDetails'
 
@@ -88,9 +81,7 @@ async function newsData(){
 
 
 
-// for(let i = 0; i < 10; i++){
-//   newNews = data.push[i]
-// }
+
 
 useEffect(() => {
   newsData()
@@ -156,44 +147,8 @@ useEffect(() => {
           />
           }
           />
-
-          
-        
       </Switch>
-      {/* <div className='Container'>
-        { getTopNewsStory.results &&
-          getTopNewsStory.results.map((news, idx) => 
-            <Story  key={idx} news={news} index={idx}/>
-            )}
-            </div> */}
-      
-           
-        {/* <div className='Container'>
-{ getNewsData.results &&
-  getNewsData.results.map((story, idx) => 
-  <News key={idx} story={story} numbers={idx} />
     
-  
-  
-)}
-</div> */}
-        
-
-{/* <div>
-            <div className='Container'>
-        { getTopNewsStory.results.length > 0 &&
-          grabTopFive(getTopNewsStory.results).map((news, idx) => 
-            <Landing  key={idx} newsStory={news} index={idx}/>
-            )}
-            </div>
-        </div> */}
-      
-      
-
-            
-        
-            
-         
         </main>
          
             
@@ -205,4 +160,4 @@ useEffect(() => {
 
 export default withRouter(App);
 
-// image={story.multimedia[0].url}
+

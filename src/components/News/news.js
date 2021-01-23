@@ -2,7 +2,6 @@
 import Card from 'react-bootstrap/Card'
 import styles from './news.module.css'
 import  Button  from 'react-bootstrap/Button'
-import {CardDeck } from 'react-bootstrap'
 export function News(props){
     
     return (
@@ -17,11 +16,11 @@ export function News(props){
                 <Button variant="dark" href={props.story.url}>News Article</Button>
             </Card.Body>
         </Card>
-    
+        
         
         </div>
     )
 }
-// 
+
 
 

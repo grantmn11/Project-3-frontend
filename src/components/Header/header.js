@@ -9,21 +9,37 @@ import styles from './header.module.css'
 
 export function Header(props){
     let drop = props.user ?
-    <Navbar bg="dark" variant="dark">
-    <NavDropdown title="View All" id="collasible-nav-dropdown">
-        <NavDropdown.Item href="/news">News</NavDropdown.Item>
-        <NavDropdown.Item href="/movies">Movies</NavDropdown.Item>
+    <Navbar collapseOnSelect expand='lg' bg="dark" variant="dark">
+    <Navbar.Brand href="/">Home</Navbar.Brand>
+    <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+    <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="mr-auto">
+    <Nav.Link href="/news">News</Nav.Link>
+        <Nav.Link href="/movies">Movies</Nav.Link>
+        <Nav.Link href="/books">Books</Nav.Link>
+        <Nav.Link href="/shows">Shows</Nav.Link>
+        {/* <NavDropdown title="View All" id="responsive-nav-dropdown">
+         <NavDropdown.Item href="/news">News</NavDropdown.Item>
+         <NavDropdown.Item href="/movies">Movies</NavDropdown.Item>
         <NavDropdown.Item href="/books">Books</NavDropdown.Item>
-        <NavDropdown.Item href="/shows">Shows</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="/">Home</NavDropdown.Item>
-      </NavDropdown> 
+         <NavDropdown.Item href="/shows">Shows</NavDropdown.Item>
+         <NavDropdown.Divider />
+         <NavDropdown.Item href="/">Home</NavDropdown.Item>
+         </NavDropdown /> */}
+    
+        
+     </Nav>
+     </Navbar.Collapse>
       </Navbar>
+
+      
       :
-      <Form inline>
+      
+       <Form inline>
   <FormControl type="text" placeholder="Search" className="mr-sm-2" />
   <Button variant="outline-light">Search</Button>
-</Form>
+</Form> 
+
       
     return(
 
@@ -72,3 +88,13 @@ export function Header(props){
             </ul>
         </nav>
       </header>   */}
+    {/* //   <Navbar bg="dark" variant="dark">
+    // <NavDropdown title="View All" id="collasible-nav-dropdown">
+    //     <NavDropdown.Item href="/news">News</NavDropdown.Item>
+    //     <NavDropdown.Item href="/movies">Movies</NavDropdown.Item>
+    //     <NavDropdown.Item href="/books">Books</NavDropdown.Item>
+    //     <NavDropdown.Item href="/shows">Shows</NavDropdown.Item>
+    //     <NavDropdown.Divider />
+    //     <NavDropdown.Item href="/">Home</NavDropdown.Item>
+    //   </NavDropdown> 
+    //   </Navbar> */}

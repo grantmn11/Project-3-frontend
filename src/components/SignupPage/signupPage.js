@@ -3,6 +3,7 @@ import {signup} from '../../services/userService'
 import { NewSign } from '../NewSign/newSign';
 import styles from "./signupPage.module.css";
 
+
 export function SignupPage(props){
     const [formState, setFormState] = useState(getInitialFormState())
 
@@ -40,7 +41,7 @@ export function SignupPage(props){
 }
 function grabTopFive(arr){
     let newArr = [];
-    for(let i = 0; i < 1; i++){
+    for(let i = 0; i < 3; i++){
      newArr.push(arr[i])
 
 } 
@@ -76,33 +77,33 @@ function grabTopFive(arr){
         {newUser}
         <div className={styles.Container}>
             <form className={styles.field} onSubmit={handleSubmit}>
-                <input 
+                <input className={styles.input}
                 value={formState.firstName}
                  onChange={handleChange} 
                  name='firstName' 
                  type='text' 
-                placeholder='First Name'
+                 placeholder='First Name'
                  />
-                <input 
+                <input className={styles.input}
                 value={formState.lastName} 
                 onChange={handleChange} 
                 name='lastName' 
                 type='text' 
                 placeholder='Last Name'
                 />
-                <input 
+                <input className={styles.input}
                 value={formState.email} 
                 onChange={handleChange}
                 name='email' 
                 type='email'
                 placeholder='Email' />
-                <input 
+                <input className={styles.input}
                 value={formState.password} 
                 onChange={handleChange}
                 name='password' 
                 type='password'
                 placeholder='Password' />
-                <button>Sign Up</button>
+                <button className={styles.button}>Sign Up</button>
             </form>
         </div>
         </div>

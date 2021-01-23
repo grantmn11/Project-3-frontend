@@ -5,7 +5,9 @@ import {Link} from 'react-router-dom'
 export function TV(props){
     return(
         <Card className={styles.Card} style={{ width: '18rem'}}>
+        <Link to={`/overview/${props.id}`}>
         <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w300${props.image}`}/>
+        </Link>
             <Card.Body>
                 <Card.Title className={styles.Title}>Trending Shows</Card.Title>
                 <Card.Subtitle className='mb-2 text-muted'>
@@ -14,9 +16,9 @@ export function TV(props){
                 <Card.Text>
                  <strong>Rating: {props.television.vote_average}</strong>
                 </Card.Text>
-                <Link to={`/overview/${props.id}`}>
-                    Show Details
-                </Link>
+                
+                    
+                
             </Card.Body>
         </Card>
     )

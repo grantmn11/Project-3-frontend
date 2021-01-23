@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
 
 export function MovieDetails(props){
@@ -6,8 +6,9 @@ export function MovieDetails(props){
     return(
         <div className='Container'>
         <Card  style={{ width: '18rem'}} >
-        <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w300${props.movie.poster_path}`} />
-        
+        <Link to ='/movies' >
+        <Card.Img variant="top"  src={`https://image.tmdb.org/t/p/w300${props.movie.poster_path}`} />
+        </Link>
             <Card.Body>
                 <Card.Title >{props.movie.title}</Card.Title>
                 
@@ -16,6 +17,9 @@ export function MovieDetails(props){
                 </Card.Text>
                 
             </Card.Body>
+            
+                
+            
         </Card>
         </div>
     )

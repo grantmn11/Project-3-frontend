@@ -22,12 +22,3 @@ export function DashboardPage(props){
     )
  }
 
-{/* <div className='Container'>
-{ getNewsData.results &&
-  getNewsData.results.map((story, idx) => 
-  <News key={idx} story={story} numbers={idx} />
-    
-  
-  
-)}
-</div> */}
