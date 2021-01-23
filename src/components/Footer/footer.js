@@ -12,12 +12,12 @@ export function Footer(props){
         <Popover id="popover-basic">
           <Popover.Title as="h3">
           <a href='https://www.linkedin.com/in/grant-ferreira1/'>
-            <img className={styles.image} src={LinkedIn}/>
+            <img className={styles.image} src={LinkedIn} alt='LinkedIn'/>
             </a>
           </Popover.Title>
           <Popover.Title >
             <a href='https://github.com/grantmn11'>
-            <img className={styles.image} src={Github}/>
+            <img className={styles.image} src={Github} alt='GitHub'/>
             </a>
             </Popover.Title>
           </Popover>
