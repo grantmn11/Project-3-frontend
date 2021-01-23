@@ -1,4 +1,4 @@
-import {setToken, getUserFromToken, removeToken, getToken} from './tokenService'
+import {setToken, getUserFromToken, removeToken} from './tokenService'
 
 // const BASE_URL = 'http://localhost:3001/api/users'
 const BASE_URL = 'https://project-3-onestop.herokuapp.com/api/users'
