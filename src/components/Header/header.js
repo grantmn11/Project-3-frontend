@@ -14,6 +14,7 @@ export function Header(props){
      <Navbar.Collapse id='basic-navbar-nav'>
      <Nav className='mr-auto'>
          <NavDropdown title="View All" id="collasible-nav-dropdown">
+          
           <NavDropdown.Item href="/news">News</NavDropdown.Item>
           <NavDropdown.Item href="/movies">Movies</NavDropdown.Item>
          <NavDropdown.Item href="/books">Books</NavDropdown.Item>
@@ -46,8 +47,8 @@ export function Header(props){
    :
    <>
   
-   <Navbar.Brand href="/signup">Sign  Up</Navbar.Brand>
-   <Navbar.Brand href="/login">Login</Navbar.Brand>
+   <Nav.Link href="/signup">Sign  Up</Nav.Link>
+   <Nav.Link href="/login">Login</Nav.Link>
    </>
 
    }
