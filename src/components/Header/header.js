@@ -5,6 +5,7 @@
  import FormControl from 'react-bootstrap/FormControl'
  import Button from 'react-bootstrap/Button'
  import  NavDropdown  from 'react-bootstrap/NavDropdown';
+ import {Link} from 'react-router-dom';
 
 
 export function Header(props){
@@ -14,14 +15,24 @@ export function Header(props){
      <Navbar.Collapse id='basic-navbar-nav'>
      <Nav className='mr-auto'>
          <NavDropdown title="View All" id="collasible-nav-dropdown">
-          
-          <NavDropdown.Item href="/news">News</NavDropdown.Item>
+          <Link to='/news' className='mr-auto'>
+          <NavDropdown.Item  href="/news">News</NavDropdown.Item>
+          </Link>
+          <Link to='/movies' className='mr-auto'>
           <NavDropdown.Item href="/movies">Movies</NavDropdown.Item>
+          </Link>
+          <Link to='/books' className='mr-auto'>
          <NavDropdown.Item href="/books">Books</NavDropdown.Item>
+         </Link>
+         <Link to='/shows' className='mr-auto'>
           <NavDropdown.Item href="/shows">Shows</NavDropdown.Item>
+          </Link>
           <NavDropdown.Divider />
+          <Link to='/' className='mr-auto'>
           <NavDropdown.Item href="/">Home</NavDropdown.Item>
+          </Link>
           </NavDropdown>
+          
              </Nav>
           </Navbar.Collapse>
        </Navbar>
@@ -42,13 +53,14 @@ export function Header(props){
  <Nav className="mr-auto">
    { props.user ?
    <>
-   <Navbar.Brand href="/dashboard">Welcome, <strong>{props.user.firstName}</strong></Navbar.Brand>/   <Navbar.Brand href="" onClick={props.handleLogout} style={{fontSize: 13}}>Logout</Navbar.Brand>
+   <Navbar.Brand>Welcome, <strong>{props.user.firstName}</strong></Navbar.Brand>   
+   <Navbar.Brand href="" className='nav-link' onClick={props.handleLogout} style={{fontSize: 13}}>Logout</Navbar.Brand>
    </>
    :
    <>
   
-   <Nav.Link href="/signup">Sign  Up</Nav.Link>
-   <Nav.Link href="/login">Login</Nav.Link>
+   <Link to="/signup" className='nav-link'>Sign  Up</Link>
+   <Link to="/login" className='nav-link'>Login</Link>
    </>
 
    }
