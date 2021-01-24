@@ -1,7 +1,7 @@
  import {Story} from '../Story/story'
 
  export function HomePage(props){
-   console.log(props.user)
+  
    function grabTopFive(arr){
     let newArr = [];
    for(let i = 0; i < 5; i++){

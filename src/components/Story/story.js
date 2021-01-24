@@ -11,7 +11,7 @@ export function Story(props){
         <Card className={styles.Card} style={{ width: '18rem'}}>
              <Card.Img variant="top" src={`${image}`}/> 
             <Card.Body>
-                <Card.Title className={styles.Title}>{props.news.title}</Card.Title>
+                <Card.Title >{props.news.title}</Card.Title>
                 <Card.Text>
                     {props.news.abstract}
                 </Card.Text>
