@@ -9,7 +9,7 @@ export function TV(props){
         <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w300${props.image}`}/>
         </Link>
             <Card.Body>
-                <Card.Title className={styles.Title}>Trending Shows</Card.Title>
+                <Card.Title>Trending Shows</Card.Title>
                 <Card.Subtitle className='mb-2 text-muted'>
                  {props.television.original_name}
                 </Card.Subtitle>

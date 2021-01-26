@@ -12,7 +12,7 @@ export function Movie(props){
         <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w300${props.image}`} />
         </Link>
             <Card.Body>
-                <Card.Title className={styles.Title}>Trending Movies</Card.Title>
+                <Card.Title>Trending Movies</Card.Title>
                 <Card.Subtitle className='mb-2 text-muted'>
                 {props.movie.title}
                 </Card.Subtitle>
