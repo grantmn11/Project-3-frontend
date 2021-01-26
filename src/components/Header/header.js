@@ -54,7 +54,7 @@ export function Header(props){
    { props.user ?
    <>
    <Navbar.Brand>Welcome, <strong>{props.user.firstName}</strong></Navbar.Brand>   
-   <Navbar.Brand href="" className='nav-link' onClick={props.handleLogout} style={{fontSize: 13}}>Logout</Navbar.Brand>
+   <Link href="" className='nav-link' onClick={props.handleLogout} style={{fontSize: 13}}>Logout</Link>
    </>
    :
    <>
