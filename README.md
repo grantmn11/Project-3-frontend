@@ -18,7 +18,7 @@ A React based application. A minimalist approach to news, television, movies, an
 - Bcrypt 
 
 #### Trello Board
-![Screen Shot 2021-01-05 at 5 41 15 PM](https://user-images.githubusercontent.com/69698724/105809475-9b2e4f00-5f5e-11eb-90c4-213fcc7f044e.png)
+![Screen Shot 2021-01-25 at 10 42 13 PM](https://user-images.githubusercontent.com/69698724/105809767-d0d33800-5f5e-11eb-9649-32764d82bd1e.png)
 
 
 
